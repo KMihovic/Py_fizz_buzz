@@ -1,0 +1,33 @@
+def fizz_buzz(number: int) -> str:
+    """
+    Play Fizz buzz
+    :param number: Number to check
+    :return: If number divisible with 3 = fizz, If number divisible with 5 = buzz,
+    If number divisible with 15 = fizz buzz
+    """
+    if number % 15 == 0:
+        return "fizz buzz"
+    elif number % 3 == 0:
+        return "fizz"
+    elif number % 5 == 0:
+        return "buzz"
+    else:
+        return str(number)
+
+
+input("Play Fizz Buzz.     Press ENTER to start.")
+computers_turn = 1
+number = 0
+
+while number < 99:
+    number += 1
+    if computers_turn == 1:
+        print("Computers answer: ", fizz_buzz(number))
+        computers_turn = 0
+    else:
+        users_answer = input("Player's turn: ")
+        computers_turn += 1
+        if fizz_buzz(number).casefold() != users_answer.casefold():
+            print("Sorry you give wrong answer.\nGAME OVER!")
+            break
+print("Congratulations!")
