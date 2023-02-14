@@ -1,5 +1,3 @@
-# Python_fizz_buzz
-
 Game rules:
 
 If number divisible with 3 = fizz,
